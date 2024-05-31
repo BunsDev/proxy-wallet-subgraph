@@ -1,0 +1,22 @@
+{
+  "name": "nft-rent",
+  "license": "UNLICENSED",
+  "scripts": {
+    "prepare:sepolia": "mustache config/sepolia.json subgraph.template.yaml > subgraph.yaml",
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy:sepolia": "yarn prepare:sepolia && graph deploy --product hosted-service kostyamospan/nft-rent-sepolia",
+    "create-local": "graph create --node http://localhost:8020/ kostyamospan/nft-rent",
+    "remove-local": "graph remove --node http://localhost:8020/ kostyamospan/nft-rent",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 kostyamospan/nft-rent",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.51.0",
+    "@graphprotocol/graph-ts": "0.30.0",
+    "mustache": "^3.1.0"
+  },
+  "devDependencies": {
+    "matchstick-as": "0.5.0"
+  }
+}

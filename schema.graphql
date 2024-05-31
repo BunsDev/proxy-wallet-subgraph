@@ -1,0 +1,19 @@
+type List @entity {
+  id: Bytes!
+  owner: Bytes!
+  tokenContract: Bytes!
+  tokenId: BigInt!
+  rentDuration: BigInt!
+  ethFee: BigInt!
+  fulfilled: Boolean!
+  rentedBy: Rent
+}
+
+type Rent @entity {
+  id: Bytes!
+  renter: Bytes!
+  rentEndsAt: BigInt!
+  closed: Boolean!
+  forceClosed: Boolean!
+  list: List!
+}
