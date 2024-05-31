@@ -37,7 +37,7 @@ export function handleRent(event: RentEvent): void {
     entity.renter = rent.getRenter();
     entity.rentEndsAt = rent.getRentEndsAt();
     entity.closed = false;
-    entity.closed = false;
+    entity.forceClosed = false;
 
     entityList.rentedBy = entity.id;
     entityList.fulfilled = true;
